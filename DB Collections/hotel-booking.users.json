@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "659998549a0e4cce994c968b"
+  },
+  "name": "Harith Maduranga ",
+  "email": "nharithmaduranga@gmail.com",
+  "password": "HA123",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2024-01-06T18:13:40.549Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-06T18:13:40.549Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65999a2f9a0e4cce994c968d"
+  },
+  "name": "Saman",
+  "email": "saman@gmail.com",
+  "password": "SA1234",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2024-01-06T18:21:35.566Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-06T18:21:35.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a5752eeaa6f3a72b02355f"
+  },
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "IamAdmin",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2024-01-15T18:21:35.566Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-15T18:21:35.566Z"
+  },
+  "__v": 0
+}]
