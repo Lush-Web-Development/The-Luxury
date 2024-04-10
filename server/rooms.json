@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Deluxe Room 1",
+        "maxCount": 2,
+        "phoneNumber": 1234567890,
+        "rentPerDay": 150,
+        "imageUrls": ["image1.jpg", "image2.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Luxurious room with premium amenities."
+    },
+    {
+        "name": "Non-deluxe Room 1",
+        "maxCount": 3,
+        "phoneNumber": 2345678901,
+        "rentPerDay": 100,
+        "imageUrls": ["image3.jpg", "image4.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Comfortable room with basic amenities."
+    },
+    {
+        "name": "Deluxe Room 2",
+        "maxCount": 2,
+        "phoneNumber": 3456789012,
+        "rentPerDay": 160,
+        "imageUrls": ["image5.jpg", "image6.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Elegantly designed room with a view."
+    },
+    {
+        "name": "Non-deluxe Room 2",
+        "maxCount": 4,
+        "phoneNumber": 4567890123,
+        "rentPerDay": 120,
+        "imageUrls": ["image7.jpg", "image8.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Spacious room suitable for families."
+    },
+    {
+        "name": "Deluxe Room 3",
+        "maxCount": 2,
+        "phoneNumber": 5678901234,
+        "rentPerDay": 170,
+        "imageUrls": ["image9.jpg", "image10.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Modern room with high-end facilities."
+    },
+    {
+        "name": "Non-deluxe Room 3",
+        "maxCount": 3,
+        "phoneNumber": 6789012345,
+        "rentPerDay": 110,
+        "imageUrls": ["image11.jpg", "image12.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Affordable room with a cozy atmosphere."
+    },
+    {
+        "name": "Deluxe Room 4",
+        "maxCount": 2,
+        "phoneNumber": 7890123456,
+        "rentPerDay": 180,
+        "imageUrls": ["image13.jpg", "image14.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Specially designed room for a luxury experience."
+    },
+    {
+        "name": "Non-deluxe Room 4",
+        "maxCount": 4,
+        "phoneNumber": 8901234567,
+        "rentPerDay": 130,
+        "imageUrls": ["image15.jpg", "image16.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Functional room suitable for groups."
+    },
+    {
+        "name": "Deluxe Room 5",
+        "maxCount": 2,
+        "phoneNumber": 9012345678,
+        "rentPerDay": 190,
+        "imageUrls": ["image17.jpg", "image18.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Exclusive room with personalized services."
+    },
+    {
+        "name": "Non-deluxe Room 5",
+        "maxCount": 3,
+        "phoneNumber": 1234509876,
+        "rentPerDay": 140,
+        "imageUrls": ["image19.jpg", "image20.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Simple room with a homely feel."
+    },
+    {
+        "name": "Deluxe Room 6",
+        "maxCount": 2,
+        "phoneNumber": 2345098765,
+        "rentPerDay": 200,
+        "imageUrls": ["image21.jpg", "image22.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Premium room with top-notch amenities."
+    },
+    {
+        "name": "Non-deluxe Room 6",
+        "maxCount": 4,
+        "phoneNumber": 3450987654,
+        "rentPerDay": 150,
+        "imageUrls": ["image23.jpg", "image24.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Budget-friendly room with essential facilities."
+    },
+    {
+        "name": "Deluxe Room 7",
+        "maxCount": 2,
+        "phoneNumber": 4569876543,
+        "rentPerDay": 210,
+        "imageUrls": ["image25.jpg", "image26.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "Contemporary room with a stylish decor."
+    },
+    {
+        "name": "Non-deluxe Room 7",
+        "maxCount": 3,
+        "phoneNumber": 5678765432,
+        "rentPerDay": 160,
+        "imageUrls": ["image27.jpg", "image28.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Standard room with essential amenities."
+    },
+    {
+        "name": "Deluxe Room 8",
+        "maxCount": 2,
+        "phoneNumber": 6787654321,
+        "rentPerDay": 220,
+        "imageUrls": ["image29.jpg", "image30.jpg"],
+        "currentBookings": [],
+        "type": "Deluxe",
+        "description": "High-end room with a luxurious touch."
+    },
+    {
+        "name": "Non-deluxe Room 8",
+        "maxCount": 4,
+        "phoneNumber": 7896543210,
+        "rentPerDay": 170,
+        "imageUrls": ["image31.jpg", "image32.jpg"],
+        "currentBookings": [],
+        "type": "Non-deluxe",
+        "description": "Functional room suitable for larger groups."
+    }
+]
