@@ -89,7 +89,6 @@ const LoginTabContent = () => (
   </div>
 );
 
-
 const RegisterTabContent = () => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black', position: 'relative', minHeight: '98vh' }}>
     <AnimatedText>
@@ -99,6 +98,35 @@ const RegisterTabContent = () => (
     </AnimatedText>
   </div>
 );
+
+const AccountTabContent = () => {
+
+  const [user, setUser] = useState();
+
+  useEffect(()=>{
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(currentUser);
+    setUser(currentUser);
+  }, []);
+
+  return (
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black', position: 'relative', minHeight: '98vh' }}>
+    <AnimatedText>
+      {user && user.isAdmin && 
+        <Typography variant="h1" component="div" style={{ textAlign: 'center' }} marginTop={11} fontFamily={'Playfair Display'}>
+          Admin Dashboard
+        </Typography>
+      }
+      {user && !user.isAdmin && 
+        <Typography variant="h1" component="div" style={{ textAlign: 'center' }} marginTop={11} fontFamily={'Playfair Display'}>
+          My Account
+        </Typography>
+      }
+    </AnimatedText>
+  </div>
+  )
+}
+
 const HomeTab = () => (
   <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
     
@@ -116,6 +144,14 @@ const Navigation = () => {
   const [navBackground, setNavBackground] = useState('transparent');
   const [value, setValue] = useState(0);
   /*const [currentImageIndex, setCurrentImageIndex] = useState(0);*/
+
+  const [user, setUser] = useState();
+
+  useEffect(()=>{
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(currentUser);
+    setUser(currentUser);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -155,6 +191,11 @@ const Navigation = () => {
     setValue(newValue);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    window.location.href = '/';
+  }
+
   // Background image styles for each tab
   const backgroundStyles = {
     0: {
@@ -193,15 +234,21 @@ const Navigation = () => {
       opacity: '0.9'
     },
     5: {
-      backgroundImage: `url(room6.png)`, 
+      backgroundImage: user ? `url(spa.png)` : `url(room6.png)`, 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       minHeight: '98vh',
       opacity: '0.9'
     },
-
    6: {
     backgroundImage: `url(login.jpg)`, 
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    minHeight: '98vh',
+    opacity: '0.8'
+  },
+  7: {
+    backgroundImage: `url(room1.png)`, 
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     minHeight: '98vh',
@@ -217,43 +264,37 @@ const Navigation = () => {
   return (
     <div>
       <AppBar position="fixed" style={{ backgroundColor: navBackground, boxShadow: 'none', height: '100px', font: 'Playfair Display' }}>
-        <Toolbar style={{ display: 'flex', justifyContent: 'space-between', height: '100%' }}>
+        <Toolbar style={{ display: 'flex', justifyContent: 'space-around', height: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            
-            <Tabs value={value} onChange={handleChange} textColor="white" style={{ marginLeft: '20px' }} >
+            <Tabs value={value} onChange={handleChange} textColor="white" style={{ marginLeft: '20px'}} >
               <Tab label="Home" component={Link} to="/" />
               <Tab label="Rooms" component={Link} to="/rooms" />
               <Tab label="Facilities" component={Link} to="/facilities" />
               <Tab label="Contact" component={Link} to="/contact" />
-              <Typography variant="h4" component="div" sx={{ color: 'white' }} marginRight={40} marginLeft={20} fontFamily={'Playfair Display'}>
+              <Typography variant="h4" component="div" sx={{ color: 'white' }} marginRight={20} marginLeft={20} fontFamily={'Playfair Display'}>
                 THE HOTEL LUXURY
               </Typography>
-              <Tab label="Login" component={Link} to="/login" />
-              <Tab label="Register" component={Link} to="/register" />
-              
+              {!user && <Tab label="Login" component={Link} to="/login" />}
+              {!user && <Tab label="Register" component={Link} to="/register" />}
+              {user && !user.isAdmin && <Tab label="Account" component={Link} to="/account" />}
+              {user && user.isAdmin && <Tab label="Admin Panel" component={Link} to="/admin" />}
+              {user && <Tab label="Logout" onClick={handleLogout} />}
             </Tabs>
           </div>
         </Toolbar>
       </AppBar>
       <div style={{ ...backgroundStyles[value], display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', position: 'relative' }}>
-      {value === 0 && <HomeTabContent />}
-      {value === 0 && <HomeTab />}
-      {value === 1 && <RoomsTabContent />}
-      {value === 2 && <FacilitiesTabContent />}
-      {value === 3 && <ContactTabContent />}
-      {value === 4 && <LoginTabContent />}
-      {value === 5 && <LoginTabContent />}
-      {value === 6 && <RegisterTabContent />}
-     
-    
-
+        {value === 0 && <HomeTabContent />}
+        {value === 0 && <HomeTab />}
+        {value === 1 && <RoomsTabContent />}
+        {value === 2 && <FacilitiesTabContent />}
+        {value === 3 && <ContactTabContent />}
+        {value === 4 && <HomeTabContent />}
+        {value === 5 && !user && <LoginTabContent />}
+        {value === 5 && user && <AccountTabContent />}
+        {value === 6 && <RegisterTabContent />}
       </div>
-     
-    </div>
-    
+    </div> 
   );
 };
 

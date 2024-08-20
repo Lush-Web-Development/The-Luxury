@@ -9,6 +9,7 @@ import Account from './screens/Account.js';
 import BookRoom from './screens/BookRoom.js'
 import Facilities from './screens/Facilities.js'; 
 import Contact from './screens/Contact.js';
+import AdminPanel from './screens/AdminPanel.js';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/account' element={<Account/>} />
           <Route path='/facilities' element={<Facilities/>} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/admin' element={<AdminPanel/>} />
         </Routes>
     </div>
   )

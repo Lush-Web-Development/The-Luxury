@@ -47,7 +47,7 @@ const Login = () => {
       if(temp._id) {
         setMessage(`Hello ${response.data.name}. You're successfully logged in.`);
         localStorage.setItem('currentUser', JSON.stringify(temp));
-        window.location.href = '/account';
+        window.location.href = '/';
         console.log(localStorage);
       }
       else setMessage("Login failed. Please try again.");

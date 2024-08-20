@@ -112,7 +112,7 @@ const RoomsList = () => {
       <h1 style={{ textAlign:"center" ,fontFamily: 'Dancing Script'}} >Book Now</h1><br></br>
       <DateRange onDateChange={handleDateRangeChange}/>
       <Grid container spacing={3} style={{marginTop:"1%"}}>
-        {Array.isArray(rooms) && rooms.map((room, index) => (
+        {Array.isArray(rooms) && rooms.length > 0 && rooms.map((room, index) => (
           <Grid item key={index} xs={12} sm={6} md={3}>
             <Card>
               <CardActionArea onClick={() => handleRoomClick(room)}>
@@ -170,14 +170,14 @@ const RoomsList = () => {
               <Button onClick={handleCloseDialog} color="primary">
                 Close
               </Button>
-              <a href={`http://localhost:3000/rooms/${selectedRoom._id}`}><Button color="primary">
+              <a href={`/rooms/${selectedRoom._id}`}><Button color="primary">
                 Book Now 
               </Button></a>
             </DialogActions>
           </>
         )}
       </Dialog><br></br><br></br>
-      <BookRoom/><br></br><br></br>
+
       <Footer />
     </div>
   );

@@ -16,8 +16,7 @@ const AdminPanel = () => {
 
   return (
     <div>
-        <h1 style={{textAlign:'center'}}>Admin Dashboard</h1>
-        <div style={{ display: 'flex', justifyContent: 'center', height: '100vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignContent:'center', height: '100vh' }}>
             <Tabs activeKey={activeTab} onChange={handleTabChange}>
                 <TabPane tab="Bookings" key="1">
                     <Bookings />

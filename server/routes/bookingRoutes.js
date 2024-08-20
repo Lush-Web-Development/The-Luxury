@@ -12,19 +12,41 @@ router.post('/', async(req,res) => {
         const newBooking = new Booking({
             room, room_id, user_id, from_date, to_date, total_days, total_amount, transaction_id:'1234'
         });
-        const booking = await newBooking.save();
-        console.log(booking);
 
         const currentRoom = await Room.findOne({_id: room_id});
-        currentRoom.currentBookings.push({
-            booking_id: booking._id,
-            user_id: user_id,
-            transaction_id: newBooking.transaction_id,
-            from_date: from_date,
-            to_date: to_date,
-            status: booking.status, 
-        });
-        await currentRoom.save();
+
+        let datesFree = true;
+
+        for(const booking of currentRoom.currentBookings){
+            const pastFromDate = new Date(booking.from_date);
+            const pastToDate = new Date(booking.to_date);
+            const currentFromDate = new Date(booking.from_date);
+            const currentToDate = new Date(booking.to_date);
+            if(currentToDate.getTime() > pastFromDate.getTime() 
+                || currentFromDate.getTime() < pastToDate.getTime() 
+            ){
+                datesFree = false;
+                break;
+            }
+        }
+
+        if(datesFree){
+            const booking = await newBooking.save();
+            console.log(booking);
+
+            currentRoom.currentBookings.push({
+                booking_id: booking._id,
+                user_id: user_id,
+                transaction_id: newBooking.transaction_id,
+                from_date: from_date,
+                to_date: to_date,
+                status: booking.status, 
+            });
+            await currentRoom.save();
+            res.send("Room is booked successfully.")
+        }else{
+            res.send("Room is not available for these dates.");
+        }
         
     }
     catch(err){
